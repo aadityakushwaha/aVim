@@ -1,8 +1,8 @@
 vim.cmd [[
 try
-  colorscheme default
+  colorscheme tokyonight
 catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
-  set background=transparent
+  colorscheme tokyonight
+  set background=dark
 endtry
 ]]

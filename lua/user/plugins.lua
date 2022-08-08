@@ -58,6 +58,20 @@ return packer.startup(function(use)
 	use({ "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" })
 	use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" })
 	use("folke/which-key.nvim")
+  
+  -- Auto Indent 
+  use("lukas-reineke/lsp-format.nvim")
+
+  require("lsp-format").setup {}
+  require "lspconfig".gopls.setup { on_attach = require "lsp-format".on_attach }
+
+  -- CommentToggle
+  use("terrortylor/nvim-comment")
+  require('nvim_comment').setup()
+
+  -- ImagePreview
+  use("nvim-telescope/telescope-media-files.nvim")
+
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" })
