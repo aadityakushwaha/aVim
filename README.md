@@ -1,25 +1,46 @@
+
 # Neovim from scratch
-
-**Important Update** When I initially created this repo I didn't anticipate the amount of breaking changes, if you'd like to use the same basic config as this one as a base I recommend my new repo: [nvim-basic-ide](https://github.com/LunarVim/nvim-basic-ide)
-
-**Another Update** This repo should work fine with Neovim 0.8, also all packages are pinned so it should remain stable.
-
-Each video will be associated with a branch so checkout the one you are interested in, you can follow along with this [playlist](https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ).
-
+**Update** This repo should work fine with Neovim 0.8, also all packages are pinned so it should remain stable.
 ## Try out this config
+
+#### Prepare your system
+- For **MacOS**
+  - Make sure you have **Homebrew** installed
+   ```
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+   -  Install the recommended packages
+   ```
+   brew install node neovim luajit
+   ```
+
+- For **Linux**
+  ```
+  sudo apt update -y
+  sudo apt upgrade -y
+  sudo apt install software-properties-common -y
+  sudo add-apt-repository ppa:neovim-ppa/unstable -y
+  sudo apt-get update -y
+  sudo apt-get install neovim -y
+  ```
+  
+- Install **NERD FONTS**
+  - Visit this link for more info: [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
 Make sure to remove or move your current `nvim` directory
 
+## Install here !!!
+
 **IMPORTANT** Requires [Neovim v0.8.0]](https://github.com/neovim/neovim/releases).  [Upgrade](#upgrade-to-latest-release) if you're on an earlier version. 
 ```
-git clone https://github.com/LunarVim/Neovim-from-scratch.git ~/.config/nvim
+git clone https://github.com/aadityakushwaha/aVim.git ~/.config/nvim
 ```
 
 Run `nvim` and wait for the plugins to be installed 
 
 **NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
 
-## Get healthy
+## Health Check
 
 Open `nvim` and enter the following:
 
@@ -64,6 +85,16 @@ Next we need to install python support (node is optional)
 
 **NOTE** make sure you have [node](https://nodejs.org/en/) installed, I recommend a node manager like [fnm](https://github.com/Schniz/fnm).
 
+* For **MacOS** 
+  ```
+  brew install node
+  ```
+
+* For **Linux**
+  ```
+  sudo apt install nodejs
+  ```
+
 ### Upgrade to latest release
 
 Assuming you [built from source](https://github.com/neovim/neovim/wiki/Building-Neovim#quick-start), `cd` into the folder where you cloned `neovim` and run the following commands. 
@@ -73,7 +104,3 @@ make distclean && make CMAKE_BUILD_TYPE=Release
 sudo make install
 nvim -v
 ```
-
-> The computing scientist's main challenge is not to get confused by the complexities of his own making. 
-
-\- Edsger W. Dijkstra
